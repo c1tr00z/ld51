@@ -59,6 +59,13 @@
      <Compile Include="Assets/Code/Runtime/GameActors/GameCharacterAnimationEvents.cs" />
      <Compile Include="Assets/Code/Runtime/Damage/MeleeWeapon.cs" />
      <Compile Include="Assets/Code/Runtime/Damage/Weapon.cs" />
+     <Compile Include="Assets/Code/Runtime/Gameplay/Events/GameEventBase.cs" />
+     <Compile Include="Assets/Code/Runtime/Gameplay/Events/GameEventRandomCharacterPossession.cs" />
+     <Compile Include="Assets/Code/Runtime/Gameplay/Events/GameEventPosession.cs" />
+     <Compile Include="Assets/Code/Runtime/Gameplay/UI/GameEventControllerDataModel.cs" />
+     <Compile Include="Assets/Code/Runtime/Common/ValueReceivers/ValueReceiverRotation.cs" />
+     <Compile Include="Assets/Code/Runtime/Common/ValueReceivers/ValueReceiverTextTMP.cs" />
+     <Compile Include="Assets/Code/Runtime/Common/SimpleAnimationPlayer.cs" />
      <None Include="Assets/Code/Runtime/MassBattle.Runtime.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2020.3.30f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -650,6 +657,9 @@
      </Reference>
      <Reference Include="Unity.InputSystem">
      <HintPath>/Users/c1tr00z/dev/repos/ld51/MassFightUnity/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TextMeshPro">
+     <HintPath>/Users/c1tr00z/dev/repos/ld51/MassFightUnity/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>/Users/c1tr00z/dev/repos/ld51/MassFightUnity/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>

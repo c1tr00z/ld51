@@ -1,14 +1,22 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using c1tr00z.AssistLib.AppModules;
 using c1tr00z.AssistLib.Common;
 using c1tr00z.AssistLib.ResourcesManagement;
 using c1tr00z.AssistLib.Utils;
 using c1tr00z.LD51.GameActors;
+using Code.Runtime.Damage;
 using UnityEngine;
 
-namespace Runtime.Gameplay {
+namespace c1tr00z.LD51.Gameplay {
     public class GameplayController : Module {
+
+        #region Events
+
+        public static event Action<bool> GameStop;
+
+        #endregion
 
         #region Private Fields
 
@@ -38,6 +46,7 @@ namespace Runtime.Gameplay {
 
         private void OnEnable() {
             GameActorsController.Initialized += GameActorsControllerOnInitialized;
+            Life.Died += LifeOnDied;
         }
 
         private void OnDisable() {
@@ -68,6 +77,20 @@ namespace Runtime.Gameplay {
                     }
                 });
             });
+        }
+
+        private void LifeOnDied(Life obj) {
+            var allAlive = Modules.Get<GameActorsController>().gameCharacters.Where(c => c.life.isAlive).ToList();
+            var playerSided = allAlive.Where(c => c.side == player.currentSide).ToList();
+            if (playerSided.Count == 0) {
+                GameStop?.Invoke(false);
+                return;
+            }
+
+            var oppositeSided = allAlive.Where(c => c.side != player.currentSide).ToList();
+            if (oppositeSided.Count == 0) {
+                GameStop?.Invoke(true);
+            }
         }
 
         #endregion

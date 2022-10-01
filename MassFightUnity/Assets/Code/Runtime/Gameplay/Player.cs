@@ -6,8 +6,14 @@ using Code.Runtime.Damage;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Runtime.Gameplay {
+namespace c1tr00z.LD51.Gameplay {
     public class Player : MonoBehaviour {
+
+        #region Events
+
+        public static event Action Updated;
+
+        #endregion
 
         #region Private Fields
 
@@ -27,6 +33,8 @@ namespace Runtime.Gameplay {
 
         private GameCharacter gameCharacter => _posessedActor as GameCharacter;
 
+        public Side currentSide { get; private set; } = Side.NEUTRAL;
+
         #endregion
 
         #region Unity Events
@@ -39,19 +47,13 @@ namespace Runtime.Gameplay {
             Life.Died -= LifeOnDied;
         }
 
-        private void Update() {
-            if (Input.GetKeyUp(KeyCode.Space)) {
-                PossessNew();
-            }
-
-            UpdateRotation();
-        }
-
         private void LateUpdate() {
             if (_posessedActor == null) {
                 return;
             }
 
+            UpdateRotation();
+            
             transform.position = _posessedActor.transform.position;
         }
 
@@ -59,13 +61,27 @@ namespace Runtime.Gameplay {
 
         #region Class Implementation
 
-        private void PossessNew() {
-            var character = Modules.Get<GameActorsController>().gameCharacters.RandomItem();
-            if (character.IsNull()) {
+        public void UnpossessCurrent() {
+            if (_posessedActor.IsNull()) {
                 return;
             }
-            character.Possess(character.side);
-            _posessedActor = character;
+            transform.parent = null;
+            _posessedActor.Unpossess();
+            _posessedActor = null;
+            Updated?.Invoke();
+        }
+
+        public void Possess(GameActor newActor) {
+            UnpossessCurrent();
+
+            if (newActor == null) {
+                return;
+            }
+            
+            newActor.Possess(newActor.side);
+            _posessedActor = newActor;
+            currentSide = _posessedActor.side;
+            Updated?.Invoke();
         }
 
         public void Move(InputAction.CallbackContext callbackContext) {
@@ -100,9 +116,7 @@ namespace Runtime.Gameplay {
             }
 
             if (gameCharacter.life == life) {
-                transform.parent = null;
-                gameCharacter.Unpossess();
-                _posessedActor = null;
+                UnpossessCurrent();
             }
         }
 
@@ -113,7 +127,6 @@ namespace Runtime.Gameplay {
 
             var actorScreenPosition = _camera.WorldToScreenPoint(_posessedActor.transform.position).ToVector2();
             var mousePosition = Input.mousePosition.ToVector2();
-            Debug.LogError(actorScreenPosition + " ::: " +  mousePosition);
             var heading = mousePosition - actorScreenPosition;
             var direction2D = heading / heading.magnitude;
 

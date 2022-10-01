@@ -4,7 +4,7 @@ using c1tr00z.AssistLib.ResourcesManagement;
 using c1tr00z.LD51.GameActors;
 using UnityEngine;
 
-namespace Runtime.Gameplay {
+namespace c1tr00z.LD51.Gameplay {
     public class GameplayData : DBEntry {
 
         #region Nested Classes
@@ -21,6 +21,9 @@ namespace Runtime.Gameplay {
 
         public List<CharacterPerSide> charactersPerSide;
 
+        public float eventCooldown = 10;
+
         #endregion
+
     }
 }

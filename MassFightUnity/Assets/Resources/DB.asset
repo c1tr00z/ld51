@@ -21,5 +21,6 @@ MonoBehaviour:
   - MainScene
   - Modules/Scenes
   - Modules/UI
+  - UI/GameplayFrame
   - UI/Layers/UILayerMain
   - UIFrameEnterPlayerName
