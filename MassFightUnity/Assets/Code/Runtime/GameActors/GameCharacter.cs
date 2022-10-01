@@ -18,6 +18,8 @@ namespace c1tr00z.LD51.GameActors {
 
         private Life _life;
 
+        private Vector2 _playerInput;
+
         #endregion
 
         #region Serialized Fields
@@ -29,6 +31,8 @@ namespace c1tr00z.LD51.GameActors {
         [SerializeField] private Material _redMaterial;
         
         [SerializeField] private Material _bluMaterial;
+
+        [SerializeField] private Collider _mainCollider;
 
         #endregion
 
@@ -58,6 +62,10 @@ namespace c1tr00z.LD51.GameActors {
             animations.Animate(velocity);
         }
 
+        private void FixedUpdate() {
+            MoveControlsFromPlayer();
+        }
+
         #endregion
 
         #region GameActor Implementation
@@ -78,9 +86,10 @@ namespace c1tr00z.LD51.GameActors {
             base.Possess(newSide);
         }
 
-        public override void Unpossess(Side newSide) {
+        public override void Unpossess() {
             navMeshAgent.enabled = true;
-            base.Unpossess(newSide);
+            _playerInput = Vector2.zero;
+            base.Unpossess();
         }
 
         public override void Action() {
@@ -95,10 +104,19 @@ namespace c1tr00z.LD51.GameActors {
             _meshRenderer.material = side == Side.RED ? _redMaterial : _bluMaterial;
         }
 
+        public override void MoveByPlayer(Vector2 input) {
+            _playerInput = input;
+        }
+
+        #endregion
+
+        #region Class Implementation
+
         public void OnDied() {
             navMeshAgent.enabled = false;
             animations.Die();
             rigidbody.isKinematic = true;
+            _mainCollider.enabled = false;
             WaitAndDie();
         }
 
@@ -128,7 +146,21 @@ namespace c1tr00z.LD51.GameActors {
 
         private IEnumerator C_WaitAndDestroy() {
             yield return new WaitForSeconds(5);
-            // Destroy(gameObject);
+            Destroy(gameObject);
+        }
+
+        private void MoveControlsFromPlayer() {
+            if (!isPossessed) {
+                return;
+            }
+            // var forward = transform.forward * (_playerInput.y * navMeshAgent.speed);
+            // var right = transform.right * (_playerInput.x * navMeshAgent.speed);
+            // var newVelocity = (forward + right);
+            // newVelocity.y = rigidbody.velocity.y;
+
+            var newVelocity = new Vector3(_playerInput.x, 0, _playerInput.y) * navMeshAgent.speed;
+            
+            rigidbody.velocity = newVelocity;
         }
 
         #endregion

@@ -159,6 +159,7 @@ namespace c1tr00z.LD51.GameActors {
                 character.Init(request.side);
                 character.transform.position =
                     VectorUtils.RandomV3(new Vector3(-30, .3f, -30), new Vector3(30, .35f, 30));
+                gameCharacters.Add(character);
             }
 
             return true;

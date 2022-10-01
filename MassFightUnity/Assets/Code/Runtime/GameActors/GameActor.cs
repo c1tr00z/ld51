@@ -21,13 +21,15 @@ namespace c1tr00z.LD51.GameActors {
             isPossessed = true;
         }
 
-        public virtual void Unpossess(Side newSide) {
+        public virtual void Unpossess() {
             isPossessed = false;
         }
 
         public abstract void Action();
 
         protected abstract void ChangeSide(Side newSide);
+
+        public abstract void MoveByPlayer(Vector2 input);
 
         #endregion
 

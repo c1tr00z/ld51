@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using c1tr00z.AssistLib.Utils;
 using UnityEngine;
 
@@ -84,10 +85,12 @@ namespace c1tr00z.LD51.GameActors {
 
             _lastAttentionTimeCheck = Time.time;
 
+            _opponents = _opponents.Where(c => !c.IsNull()).ToList();
+
             if (_opponents.Count == 0) {
                 return;
             }
-
+            
             _target = _opponents.MinElement(c => (c.transform.position - transform.position).magnitude);
         }
 

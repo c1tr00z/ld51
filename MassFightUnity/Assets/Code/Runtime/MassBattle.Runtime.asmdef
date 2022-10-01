@@ -2,7 +2,8 @@
     "name": "MassBattle.Runtime",
     "rootNamespace": "",
     "references": [
-        "GUID:1a87e266707394558b9e046315a4618f"
+        "GUID:1a87e266707394558b9e046315a4618f",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

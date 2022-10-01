@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charactersPerSide:
   - dbEntry: {fileID: 11400000, guid: 587884958c4934f0987f45e23d9186e9, type: 2}
-    amount: 2
+    amount: 10
+  - dbEntry: {fileID: 11400000, guid: 178aff14306964fc0939cf71f8a20e3b, type: 2}
+    amount: 3
