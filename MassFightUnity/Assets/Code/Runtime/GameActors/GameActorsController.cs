@@ -8,6 +8,7 @@ using c1tr00z.AssistLib.ResourcesManagement;
 using c1tr00z.AssistLib.Utils;
 using Code.Runtime.Damage;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace c1tr00z.LD51.GameActors {
     public class GameActorsController : Module {
@@ -154,7 +155,7 @@ namespace c1tr00z.LD51.GameActors {
 
             if (_characterPrefabs.ContainsKey(request.dbEntry)) {
                 var character = _characterPrefabs[request.dbEntry].Clone();
-                character.name = request.dbEntry.name;
+                character.name = request.dbEntry.name + "_" + Random.Range(0, 100);
                 character.Init(request.side);
                 character.transform.position =
                     VectorUtils.RandomV3(new Vector3(-30, .3f, -30), new Vector3(30, .35f, 30));

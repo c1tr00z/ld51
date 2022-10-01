@@ -42,9 +42,12 @@ namespace Code.Runtime.Damage {
 
         #region Class Implementation
 
-        public void Damage(int newDamage) {
+        public void Damage(int newDamage, Weapon weapon) {
+            if (!isAlive) {
+                return;
+            }
             damage += newDamage;
-            if (damage >= hp) {
+            if (damage >= maxHP) {
                 OnDied.SafeInvoke();
                 Died?.Invoke(this);
                 return;

@@ -32,6 +32,14 @@ namespace c1tr00z.LD51.GameActors {
             animator.SetFloat("Right", directionDiffX);
         }
 
+        public void Attack() {
+            animator.SetTrigger("Attack");
+        }
+
+        public void Die() {
+            animator.SetBool("Dead", true);
+        }
+
         #endregion
     }
 }

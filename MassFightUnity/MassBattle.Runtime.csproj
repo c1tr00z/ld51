@@ -56,6 +56,9 @@
      <Compile Include="Assets/Code/Runtime/GameActors/GameCharacterAnimations.cs" />
      <Compile Include="Assets/Code/Runtime/Damage/Life.cs" />
      <Compile Include="Assets/Code/Runtime/Gameplay/GameplayData.cs" />
+     <Compile Include="Assets/Code/Runtime/GameActors/GameCharacterAnimationEvents.cs" />
+     <Compile Include="Assets/Code/Runtime/Damage/MeleeWeapon.cs" />
+     <Compile Include="Assets/Code/Runtime/Damage/Weapon.cs" />
      <None Include="Assets/Code/Runtime/MassBattle.Runtime.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2020.3.30f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

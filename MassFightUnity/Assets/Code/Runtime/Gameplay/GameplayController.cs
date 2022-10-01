@@ -61,7 +61,6 @@ namespace Runtime.Gameplay {
         #region Class Implementation
 
         private void GameActorsControllerOnInitialized() {
-            Debug.LogError(actorsController);
             new List<Side> { Side.RED, Side.BLU }.ForEach(side => {
                 gameplayData.charactersPerSide.ForEach(perSide => {
                     for (int i = 0; i < perSide.amount; i++) {

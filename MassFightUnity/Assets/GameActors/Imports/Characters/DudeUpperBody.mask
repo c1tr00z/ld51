@@ -12,29 +12,29 @@ AvatarMask:
   - m_Path: 
     m_Weight: 1
   - m_Path: Armature
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Bone
     m_Weight: 0
   - m_Path: Armature/Bone/Bone_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Bone.001
     m_Weight: 0
   - m_Path: Armature/Bone.001/Bone.001_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Root
     m_Weight: 0
   - m_Path: Armature/Root/FootIK.L
     m_Weight: 0
   - m_Path: Armature/Root/FootIK.L/Foot.L
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Root/FootIK.L/Foot.L/Foot.L_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Root/FootIK.R
     m_Weight: 0
   - m_Path: Armature/Root/FootIK.R/Foot.R
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Root/FootIK.R/Foot.R/Foot.R_end
-    m_Weight: 1
+    m_Weight: 0
   - m_Path: Armature/Root/Hips
     m_Weight: 0
   - m_Path: Armature/Root/Hips/LegPole.L

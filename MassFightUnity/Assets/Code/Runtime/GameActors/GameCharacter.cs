@@ -1,3 +1,4 @@
+using System.Collections;
 using c1tr00z.AssistLib.Utils;
 using Code.Runtime.Damage;
 using UnityEngine;
@@ -21,6 +22,8 @@ namespace c1tr00z.LD51.GameActors {
 
         #region Serialized Fields
 
+        [SerializeField] private Weapon _weapon;
+
         [SerializeField] private SkinnedMeshRenderer _meshRenderer;
 
         [SerializeField] private Material _redMaterial;
@@ -33,7 +36,7 @@ namespace c1tr00z.LD51.GameActors {
 
         protected Rigidbody rigidbody => this.GetCachedComponent(ref _rigidbody);
 
-        private NavMeshAgent navMeshAgent => this.GetCachedComponent(ref _navMeshAgent);
+        public NavMeshAgent navMeshAgent => this.GetCachedComponent(ref _navMeshAgent);
 
         private Vector3 velocity => isPossessed ? rigidbody.velocity : navMeshAgent.velocity;
 
@@ -41,9 +44,15 @@ namespace c1tr00z.LD51.GameActors {
 
         public Life life => this.GetCachedComponent(ref _life);
 
+        public bool isAttacked { get; private set; }
+
         #endregion
 
         #region Unity Events
+
+        private void Awake() {
+            _weapon.Init(this);
+        }
 
         private void LateUpdate() {
             animations.Animate(velocity);
@@ -62,6 +71,9 @@ namespace c1tr00z.LD51.GameActors {
         }
 
         public override void Possess(Side newSide) {
+            if (!life.isAlive) {
+                return;
+            }
             navMeshAgent.enabled = false;
             base.Possess(newSide);
         }
@@ -72,7 +84,7 @@ namespace c1tr00z.LD51.GameActors {
         }
 
         public override void Action() {
-            
+            Attack();
         }
 
         protected override void ChangeSide(Side newSide) {
@@ -84,7 +96,39 @@ namespace c1tr00z.LD51.GameActors {
         }
 
         public void OnDied() {
-            Destroy(gameObject);
+            navMeshAgent.enabled = false;
+            animations.Die();
+            rigidbody.isKinematic = true;
+            WaitAndDie();
+        }
+
+        public void ResetAttack() {
+            isAttacked = false;
+        }
+
+        public void Attack() {
+            if (isAttacked) {
+                return;
+            }
+            animations.Attack();
+            isAttacked = true;
+        }
+
+        public void EnableWeapon() {
+            _weapon.StartAttack();
+        }
+
+        public void DisableWeapon() {
+            _weapon.FinishAttack();
+        }
+
+        private void WaitAndDie() {
+            StartCoroutine(C_WaitAndDestroy());
+        }
+
+        private IEnumerator C_WaitAndDestroy() {
+            yield return new WaitForSeconds(5);
+            // Destroy(gameObject);
         }
 
         #endregion
