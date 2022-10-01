@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: DB
   m_EditorClassIdentifier: 
   paths:
+  - Characters/MeleeRegularDude
   - DB
+  - GameplayData
+  - GameScene
   - MainScene
   - Modules/Scenes
   - Modules/UI
   - UI/Layers/UILayerMain
+  - UIFrameEnterPlayerName

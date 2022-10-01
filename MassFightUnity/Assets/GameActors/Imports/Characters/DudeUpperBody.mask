@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DudeUpperBody
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 1
+  - m_Path: Armature/Bone
+    m_Weight: 0
+  - m_Path: Armature/Bone/Bone_end
+    m_Weight: 1
+  - m_Path: Armature/Bone.001
+    m_Weight: 0
+  - m_Path: Armature/Bone.001/Bone.001_end
+    m_Weight: 1
+  - m_Path: Armature/Root
+    m_Weight: 0
+  - m_Path: Armature/Root/FootIK.L
+    m_Weight: 0
+  - m_Path: Armature/Root/FootIK.L/Foot.L
+    m_Weight: 1
+  - m_Path: Armature/Root/FootIK.L/Foot.L/Foot.L_end
+    m_Weight: 1
+  - m_Path: Armature/Root/FootIK.R
+    m_Weight: 0
+  - m_Path: Armature/Root/FootIK.R/Foot.R
+    m_Weight: 1
+  - m_Path: Armature/Root/FootIK.R/Foot.R/Foot.R_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips
+    m_Weight: 0
+  - m_Path: Armature/Root/Hips/LegPole.L
+    m_Weight: 0
+  - m_Path: Armature/Root/Hips/LegPole.L/LegPole.L_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/LegPole.R
+    m_Weight: 0
+  - m_Path: Armature/Root/Hips/LegPole.R/LegPole.R_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/Spine0
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/Spine0/Spine1
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/Spine0/Spine1/ArmPole.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/Spine0/Spine1/ArmPole.L/ArmPole.L_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/Spine0/Spine1/ArmPole.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/Spine0/Spine1/ArmPole.R/ArmPole.R_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/Spine0/Spine1/Hand.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/Spine0/Spine1/Hand.L/Hand.L_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/Spine0/Spine1/Hand.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/Spine0/Spine1/Hand.R/Hand.R_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/Spine0/Spine1/Neck
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/Spine0/Spine1/Neck/Head
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/Spine0/Spine1/Neck/Head/Head_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/Spine0/Spine1/UpperArm.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/Spine0/Spine1/UpperArm.L/LowerArm.L
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/Spine0/Spine1/UpperArm.L/LowerArm.L/LowerArm.L_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/Spine0/Spine1/UpperArm.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/Spine0/Spine1/UpperArm.R/LowerArm.R
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/Spine0/Spine1/UpperArm.R/LowerArm.R/LowerArm.R_end
+    m_Weight: 1
+  - m_Path: Armature/Root/Hips/UpperLeg.L
+    m_Weight: 0
+  - m_Path: Armature/Root/Hips/UpperLeg.L/LowerLeg.L
+    m_Weight: 0
+  - m_Path: Armature/Root/Hips/UpperLeg.L/LowerLeg.L/LowerLeg.L_end
+    m_Weight: 0
+  - m_Path: Armature/Root/Hips/UpperLeg.R
+    m_Weight: 0
+  - m_Path: Armature/Root/Hips/UpperLeg.R/LowerLeg.R
+    m_Weight: 0
+  - m_Path: Armature/Root/Hips/UpperLeg.R/LowerLeg.R/LowerLeg.R_end
+    m_Weight: 0
+  - m_Path: Mesh
+    m_Weight: 0

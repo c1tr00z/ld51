@@ -41,16 +41,22 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/Scripts/Runtime/System/GameData.cs" />
-     <Compile Include="Assets/Scripts/Runtime/System/GameDataController.cs" />
-     <Compile Include="Assets/Scripts/Runtime/Gameplay/GameEventsController.cs" />
-     <Compile Include="Assets/Scripts/Runtime/GameActors/GameActor.cs" />
-     <Compile Include="Assets/Scripts/Runtime/GameActors/GameActorsController.cs" />
-     <Compile Include="Assets/Scripts/Runtime/GameActors/GameCharacterAI.cs" />
-     <Compile Include="Assets/Scripts/Runtime/GameActors/GameCharacter.cs" />
-     <Compile Include="Assets/Scripts/Runtime/Gameplay/Player.cs" />
-     <Compile Include="Assets/Scripts/Runtime/Gameplay/GameplayController.cs" />
-     <None Include="Assets/Scripts/Runtime/MassBattle.Runtime.asmdef" />
+     <Compile Include="Assets/Code/Runtime/System/GameData.cs" />
+     <Compile Include="Assets/Code/Runtime/System/GameDataController.cs" />
+     <Compile Include="Assets/Code/Runtime/Gameplay/GameEventsController.cs" />
+     <Compile Include="Assets/Code/Runtime/GameActors/GameActor.cs" />
+     <Compile Include="Assets/Code/Runtime/GameActors/GameActorsController.cs" />
+     <Compile Include="Assets/Code/Runtime/GameActors/GameCharacterAI.cs" />
+     <Compile Include="Assets/Code/Runtime/GameActors/GameCharacter.cs" />
+     <Compile Include="Assets/Code/Runtime/Gameplay/Player.cs" />
+     <Compile Include="Assets/Code/Runtime/Gameplay/GameplayController.cs" />
+     <Compile Include="Assets/Code/Runtime/Common/GameLayers.cs" />
+     <Compile Include="Assets/Code/Runtime/GameActors/Side.cs" />
+     <Compile Include="Assets/Code/Runtime/GameActors/GameCharacterDBEntry.cs" />
+     <Compile Include="Assets/Code/Runtime/GameActors/GameCharacterAnimations.cs" />
+     <Compile Include="Assets/Code/Runtime/Damage/Life.cs" />
+     <Compile Include="Assets/Code/Runtime/Gameplay/GameplayData.cs" />
+     <None Include="Assets/Code/Runtime/MassBattle.Runtime.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2020.3.30f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
