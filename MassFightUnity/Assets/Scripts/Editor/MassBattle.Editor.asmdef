@@ -1,0 +1,38 @@
+{
+    "name": "MassBattle.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:1a87e266707394558b9e046315a4618f",
+        "GUID:f8ede56b5b82d4ef09b95d9b1b5b5fbc",
+        "GUID:c1fbf1870b3044fedb1dc9055e4e1880"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [
+        "Android",
+        "CloudRendering",
+        "Editor",
+        "GameCoreScarlett",
+        "GameCoreXboxOne",
+        "iOS",
+        "LinuxStandalone64",
+        "Lumin",
+        "macOSStandalone",
+        "PS4",
+        "PS5",
+        "Stadia",
+        "Switch",
+        "tvOS",
+        "WSA",
+        "WebGL",
+        "WindowsStandalone32",
+        "WindowsStandalone64",
+        "XboxOne"
+    ],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
